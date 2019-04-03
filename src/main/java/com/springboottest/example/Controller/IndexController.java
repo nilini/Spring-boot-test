@@ -10,6 +10,8 @@ public class IndexController {
     @RequestMapping("/")
     public String index(Model model){
         System.out.println("IndexController index方法被调用......");
+        System.out.println(model);
+        model.addAttribute("title", "this is title");
         // 返回resources/templates/index.html
         return "index";
     }

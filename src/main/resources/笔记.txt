@@ -12,4 +12,7 @@
     比如：spring-boot-start-web
     Spring Boot会自动关联Web开发相关的依赖，同时相关技术的配置也将实现自动配置。
 3、Spring Boot自动配置原理
-    W
+    
+4、Thymeleaf模板引擎
+    返回字符串“index”, Thymeleaf默认的前缀是“classpath:/templates/”,后缀是“html”,
+    所以请求返回“classpath:/templates/index.html”

@@ -20,8 +20,8 @@ public class HttpServletRequestController {
     @RequestMapping("/request")
     public String index(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        HttpSession session = request.getSession();
-        System.out.println(session.getId());
+        String name = request.getServletContext().getInitParameter("name");
+        System.out.println(name);
         return "index";
     }
 }

@@ -16,3 +16,7 @@
 4、Thymeleaf模板引擎
     返回字符串“index”, Thymeleaf默认的前缀是“classpath:/templates/”,后缀是“html”,
     所以请求返回“classpath:/templates/index.html”
+5、application、session、request\response
+    application（ServletContext）：对于整个web应用有效，其数据可被该应用下其他所有的JSP、Servlet访问。
+    session（HttpSession）：仅对一次会话有效，其数据可以被本次会话的其他所有的JSP、Servlet访问。
+    request（HttpServletRequest）：仅对本次请求有效，其数据可悲本次请求的其他JSP、Servlet访问。

@@ -1,0 +1,10 @@
+1、@SpringBootApplication注解
+    用此注解标注的入口类是应用的启动类。是个组合注解，包括：
+    @SpringBootConfiguration配置注解
+    @EbableAutoConfiguration启动自动配置
+        会让Spring Boot根据当前项目所依赖的jar包自动配置项目的相关配置项。
+    @ComponentScan扫描配置
+        默认会扫描@SpringBootApplication所在类的同级包以及它的子包。
+    
+    关闭自动配置：
+    @SpringBootApplication(exclude={RedisAutoConfiguration.class})

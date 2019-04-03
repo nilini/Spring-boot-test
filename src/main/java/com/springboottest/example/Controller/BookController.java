@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class BookController {
 
@@ -19,5 +22,17 @@ public class BookController {
         book.setPrice(55.09);
         book.setRemark("不错的书");
         return book;
+    }
+
+    /*
+    * Spring Boot会将List集合转换为json
+    * */
+    @RequestMapping("/findBooks")
+    public List<Book> findBooks(){
+        List<Book> books = new ArrayList<Book>();
+        books.add(new Book(1,"java", "wss", "java.jpg", 109.3, "kkkkkkkkk"));
+        books.add(new Book(2,"php", "wss", "java.jpg", 109.3, "kkkkkkkkk"));
+        books.add(new Book(3,"php", "wss", "java.jpg", 109.3, "kkkkkkkkk"));
+        return books;
     }
 }

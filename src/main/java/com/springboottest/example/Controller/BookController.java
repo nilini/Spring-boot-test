@@ -99,33 +99,34 @@ public class BookController {
         }
     }
 
-    @RequestMapping("/download")
-    public ResponseEntity<byte[]> download(HttpServletRequest request,
-                                           @RequestParam("filename") String filename,
-                                           @RequestHeader("User-Agent") String userAgent,
-                                           Model model) throws UnsupportedEncodingException {
-        // 下载文件路径
-        String path = request.getServletContext().getRealPath("/upload/");
-        // 构建File
-        File file = new File(path + File.separator + filename);
-
-        ResponseEntity.BodyBuilder builder = ResponseEntity.ok();
-        // 内容长度
-        builder.contentLength(file.length());
-        // application/octet-stream
-        builder.contentType(MediaType.APPLICATION_OCTET_STREAM);
-        // 对文件名进行解码
-        filename = URLEncoder.encode(filename,"UTF-8");
-        // 设置实际的响应文件名，告诉浏览器文件要用于“下载”和保存
-        // 不同的浏览器，处理方式不同，
-        if(userAgent.indexOf("MSIE") > 0){
-            //
-            builder.header("Content-Disposition", "attachment; filename=" + filename);
-        }else{
-            builder.header("Content-Disposition", "attachment; filename*=UTF-8''" + filename);
-        }
-        return builder.body(FileUtils.r);
-    }
+//    @RequestMapping("/download")
+//    public ResponseEntity<byte[]> download(HttpServletRequest request,
+//                                           @RequestParam("filename") String filename,
+//                                           @RequestHeader("User-Agent") String userAgent,
+//                                           Model model) throws UnsupportedEncodingException {
+//        // 下载文件路径
+//        String path = request.getServletContext().getRealPath("/upload/");
+//        // 构建File
+//        File file = new File(path + File.separator + filename);
+//
+//        ResponseEntity.BodyBuilder builder = ResponseEntity.ok();
+//        // 内容长度
+//        builder.contentLength(file.length());
+//        // application/octet-stream
+//        builder.contentType(MediaType.APPLICATION_OCTET_STREAM);
+//        // 对文件名进行解码
+//        filename = URLEncoder.encode(filename,"UTF-8");
+//        // 设置实际的响应文件名，告诉浏览器文件要用于“下载”和保存
+//        // 不同的浏览器，处理方式不同，
+//        if(userAgent.indexOf("MSIE") > 0){
+//            //
+//            builder.header("Content-Disposition", "attachment; filename=" + filename);
+//        }else{
+//            builder.header("Content-Disposition", "attachment; filename*=UTF-8''" + filename);
+//        }
+////        return builder.body(FileUtils.r);
+//
+//    }
 
 
 

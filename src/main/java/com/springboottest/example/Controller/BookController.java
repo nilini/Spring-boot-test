@@ -26,7 +26,7 @@ public class BookController {
     @RequestMapping("/findBook")
     public Book findBook(@RequestBody Book book){
         System.out.println(book);
-        book.setAuthor("wss");
+        book.setAuthor("wssffffffffff");
         book.setImage("AA.JPG");
         book.setPrice(55.09);
         book.setRemark("不错的书");
@@ -39,7 +39,7 @@ public class BookController {
     @RequestMapping("/findBooks")
     public List<Book> findBooks(){
         List<Book> books = new ArrayList<Book>();
-        books.add(new Book(1,"java", "wss", "java.jpg", 109.3, "kkkkkkkkk"));
+        books.add(new Book(1,"javasssss", "wss", "java.jpg", 109.3, "kkkkkkkkk"));
         books.add(new Book(2,"php", "wss", "java.jpg", 109.3, "kkkkkkkkk"));
         books.add(new Book(3,"php", "wss", "java.jpg", 109.3, "kkkkkkkkk"));
         return books;
